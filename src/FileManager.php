@@ -37,7 +37,7 @@ class FileManager extends Component
     public $uploadBaseUrl;
     /**
      * Path to folder which would contain cached files.
-     * /cache-base-path/alias/part-of-hash/file-name
+     * /cache-base-path/file-path-in-file-system
      * @var string
      */
     public $cacheBasePath;
