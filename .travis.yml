@@ -41,6 +41,7 @@ before_script:
   # show some versions and env information
   - php --version
   - composer --version
+  - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
   - |
     if [ $TASK_TESTS_PHP == 1 ]; then
       php -r "echo INTL_ICU_VERSION . \"\n\";"
