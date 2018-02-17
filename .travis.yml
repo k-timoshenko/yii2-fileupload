@@ -32,6 +32,7 @@ install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - travis_retry composer global require hirak/prestissimo
   - travis_retry composer global require fxp/composer-asset-plugin
+  - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
   - travis_retry composer install $DEFAULT_COMPOSER_FLAGS
 
   # setup PHP extension
@@ -41,7 +42,6 @@ before_script:
   # show some versions and env information
   - php --version
   - composer --version
-  - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
   - |
     if [ $TASK_TESTS_PHP == 1 ]; then
       php -r "echo INTL_ICU_VERSION . \"\n\";"
