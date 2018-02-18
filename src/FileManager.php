@@ -212,10 +212,10 @@ class FileManager extends Component
      * @param string $format
      * @param array $formatterConfig
      * @param string|null $notFoundUrl
-     * @return null|string
+     * @return array|string
      * @throws \Exception
      */
-    protected function getImageUrlInternal(?IFile $file, string $format, array $formatterConfig = [], string $notFoundUrl = null): ?string
+    protected function getImageUrlInternal(?IFile $file, string $format, array $formatterConfig = [], string $notFoundUrl = null)
     {
         $path = $this->getFilePath($file, $format, $formatterConfig);
         if ($path === null) {
