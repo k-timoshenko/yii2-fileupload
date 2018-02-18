@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+chmod 777 ./tmp/cache/
+chmod 777 ./tmp/content/
