@@ -192,7 +192,7 @@ class FileManager extends Component
      * @return array|string
      * @throws \Exception
      */
-    protected function getFileUrlInternal(?IFile $file, string $format, array $formatterConfig = [])
+    public function getFileUrlInternal(?IFile $file, string $format, array $formatterConfig = [])
     {
         $path = $this->getFilePath($file, $format, $formatterConfig);
         if ($path !== null) {
@@ -215,7 +215,7 @@ class FileManager extends Component
      * @return array|string
      * @throws \Exception
      */
-    protected function getImageUrlInternal(?IFile $file, string $format, array $formatterConfig = [], string $notFoundUrl = null)
+    public function getImageUrlInternal(?IFile $file, string $format, array $formatterConfig = [], string $notFoundUrl = null)
     {
         $path = $this->getFilePath($file, $format, $formatterConfig);
         if ($path === null) {
@@ -239,7 +239,7 @@ class FileManager extends Component
      * @return null|string
      * @throws \Exception
      */
-    protected function getFilePath(?IFile $file, string $format, array $formatterConfig = []): ?string
+    public function getFilePath(?IFile $file, string $format, array $formatterConfig = []): ?string
     {
         if ($file === null || $file->getId() === null /*null if file is not saved yet*/) {
             return null;
